@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta property="og:title" content="南部科學園區" />
+	<meta property="og:description" content="南部科學園區" />
+	<meta property="og:image" content="img/FB.jpg" />
+	<meta name="keywords" content="南部科學園區" />
+	<meta name="description" content="南部科學園區" />
+	<title>南部科學園區</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="app">
+		<header>
+			<div class="wrap">
+				<a href="javascript:;" class="btn-ham pc-hide" @click="isMenu = !isMenu"><img src="src/images/btn_ham.svg" alt="選單"></a>
+				<h1 class="logo"><a href="member.html"><img src="src/images/logo.svg" alt="南區科學園區Logo"></a></h1>
+				<nav id="menu" :class="(isMenu == 1)?'active':''">
+					<div class="btn-block text-right pc-hide">
+						<a class="btn-close" @click="isMenu = 0"><img src="src/images/btn_close.svg" alt="關閉選單"></a>
+					</div>
+					<ul>
+						<li v-for="(item, key) in menu">
+							<a @click="menuSubOpen" v-if="item.sub" class="arrow"><span class="icon" :class="'icon'+(key+1)"></span>{{ item.text }}</a>
+							<a :href="item.url" v-else><span class="icon" :class="'icon'+(key+1)"></span>{{ item.text }}</a>
+							<ul class="sub" v-if="item.sub">
+								<li v-for="subItem in item.sub">
+									<a :href="subItem.url">{{ subItem.text }}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="btn-block text-center pc-hide">
+						<a href="subscribe4.html" class="btn-radius btn-g">取消訂閱</a>
+						<a href="setting.html" class="btn-radius btn-y">設定更新</a>
+					</div>
+				</nav>
+			</div>
+		
+		</header>
+		<div class="container" id="servicePublic">
+			<a class="scrollTop" style="display:none;"></a>
+			 
+<section class="pageSwiper">
+    <swiper :options="fullSwiperOption" ref="pageSwiper" class="swiper">
+        <swiper-slide v-for="banner in pageBanners">
+            <div class="pageBanner pc-hide" :style="'background-image:url('+banner.mobileImg+')'"></div>
+            <div class="pageBanner m-hide" :style="'background-image:url('+banner.webImg+')'"></div>
+        </swiper-slide>
+        <div class="swiper-button-next" slot="button-next"><img src="src/images/btn_arrow_right.svg"></div>
+        <div class="swiper-button-prev" slot="button-prev"><img src="src/images/btn_arrow_left.svg"></div>
+        <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+</section><section id="serviceTop" class="section">
+    <h2 class="text-center">A1-101維修通報</h2>
+    <div class="page-content">
+        <p class="text-center">我看到公共設施故障：</p>
+        <textarea placeholder="輸入故障內容(100字敘述)"></textarea>
+    </div>
+    <p class="text-center">上傳損壞照片<br>(最多3張照片, 每張大小5M為上限)</p>
+    <div class="upload-group text-center">
+        <div class="btn-block">
+            <label for="upload1"><img src="src/images/btn-upload.svg"></label>
+            <label for="upload2"><img src="src/images/btn-upload.svg"></label>
+            <label for="upload3"><img src="src/images/btn-upload.svg"></label>
+            <input type="file" id="upload1" v-model="upload[0]" data-index="0" @change="filePreview">
+            <input type="file" id="upload2" v-model="upload[1]" data-index="1" @change="filePreview">
+            <input type="file" id="upload3" v-model="upload[2]" data-index="2" @change="filePreview">
+        </div>
+        <div class="preview-block">
+            <div class="preview"><img :src="preview1"></div>
+            <div class="preview"><img :src="preview2"></div>
+            <div class="preview"><img :src="preview3"></div>
+        </div>
+    </div>
+    <div class="btn-block text-center">
+        <a href="serviceResult.html" class="btn btn-inline btn-g">送出申請</a>
+        <a href="serviceList.html" class="btn btn-inline btn-gy">回上一頁</a>
+    </div>
+    <div class="member">
+    <div class="icon"><img src="src/images/icon_member.svg"></div>
+    <div class="name">王小華您好</div>
+</div>
+</section>
+
+<div class="feedback" v-show="isFeedback">
+    <a @click="isFeedback=false" class="btn-close"><img src="src/images/btn_close.svg" alt="關閉視窗"></a>
+    <div class="box text-center">
+        <p>報修通報請務必有</p>
+        <p>文字敘述或上傳圖片</p>
+        <p>兩者都有更是謝謝您的幫忙喔</p>
+        <p></p>
+        <p>南科管理局謝謝您</p>
+    </div>
+    <div class="text-center">
+        <a @click="isFeedback=false" class="btn-close-sm"><img src="src/images/btn_close_sm.svg" alt="關閉視窗"></a>
+    </div>
+</div>
+			
+			<footer>
+				<p>24HR維修中心專線：<a href="tel:06-5052772">06-5052772</a></p>
+			</footer>
+			
+		</div>
+		
+		<a href="#" class="btn-top" @click="toTop()"><img src="src/images/btn_top.svg" alt="回上方"></a>
+		
+		
+	</div>
+	<script src="js/es6-promise.auto.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-awesome-swiper.js"></script>
+	<script src="js/app.js"></script>
+
+	
+</body>
+</html>

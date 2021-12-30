@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta property="og:title" content="南部科學園區" />
+	<meta property="og:description" content="南部科學園區" />
+	<meta property="og:image" content="img/FB.jpg" />
+	<meta name="keywords" content="南部科學園區" />
+	<meta name="description" content="南部科學園區" />
+	<title>南部科學園區</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="app">
+		<header>
+			<div class="wrap">
+				<a href="javascript:;" class="btn-ham pc-hide" @click="isMenu = !isMenu"><img src="src/images/btn_ham.svg" alt="選單"></a>
+				<h1 class="logo"><a href="member.html"><img src="src/images/logo.svg" alt="南區科學園區Logo"></a></h1>
+				<nav id="menu" :class="(isMenu == 1)?'active':''">
+					<div class="btn-block text-right pc-hide">
+						<a class="btn-close" @click="isMenu = 0"><img src="src/images/btn_close.svg" alt="關閉選單"></a>
+					</div>
+					<ul>
+						<li v-for="(item, key) in menu">
+							<a @click="menuSubOpen" v-if="item.sub" class="arrow"><span class="icon" :class="'icon'+(key+1)"></span>{{ item.text }}</a>
+							<a :href="item.url" v-else><span class="icon" :class="'icon'+(key+1)"></span>{{ item.text }}</a>
+							<ul class="sub" v-if="item.sub">
+								<li v-for="subItem in item.sub">
+									<a :href="subItem.url">{{ subItem.text }}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="btn-block text-center pc-hide">
+						<a href="subscribe4.html" class="btn-radius btn-g">取消訂閱</a>
+						<a href="setting.html" class="btn-radius btn-y">設定更新</a>
+					</div>
+				</nav>
+			</div>
+		
+		</header>
+		<div class="container" id="setting">
+			<a class="scrollTop" style="display:none;"></a>
+			 
+<section class="pageSwiper">
+    <swiper :options="fullSwiperOption" ref="pageSwiper" class="swiper">
+        <swiper-slide v-for="banner in pageBanners">
+            <div class="pageBanner pc-hide" :style="'background-image:url('+banner.mobileImg+')'"></div>
+            <div class="pageBanner m-hide" :style="'background-image:url('+banner.webImg+')'"></div>
+        </swiper-slide>
+        <div class="swiper-button-next" slot="button-next"><img src="src/images/btn_arrow_right.svg"></div>
+        <div class="swiper-button-prev" slot="button-prev"><img src="src/images/btn_arrow_left.svg"></div>
+        <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+</section><section class="section">
+    <div class="outerWrap">
+        <div class="row">
+            <div class="col pc-col2">
+                <div class="box">
+                    <h2 class="name">帳號資料</h2>
+                    <div class="input-row">
+                        <label class="input-name">社區帳號</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">社區密碼</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h2 class="name">個人資料</h2>
+                    <div class="input-row">
+                        <label class="input-name">住 址</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div><div class="input-row">
+                        <label class="input-name">真實姓名</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div><div class="input-row">
+                        <label class="input-name">公司名稱</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div><div class="input-row pc-hide">
+                        <label class="input-name">電子郵件</label>
+                        <div class="input-text"><input type="text" placeholder="請確定此電子郵件維可使用狀態，以方便未來系統使用，如補寄會員密碼信。"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col pc-col2">
+                <div class="box">
+                    <h2 class="name">連絡資訊</h2>
+                    <div class="input-row">
+                        <label class="input-name">市內電話</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">行動電話</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">連絡姓名</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">車位編號</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">汽車車號</label>
+                        <div class="input-text"><input type="text"></div>
+                    </div>
+                    <div class="input-row">
+                        <label class="input-name">是否接受綁定</label>
+                        <div class="input-text"><select><option value="">是</option></select></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col pc-col1">
+                <div class="box">
+                    <div class="input-row m-hide">
+                        <label class="input-name">電子郵件</label>
+                        <div class="input-text"><input type="text" placeholder="請確定此電子郵件維可使用狀態，以方便未來系統使用，如補寄會員密碼信。"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-block text-center">
+            <a href="" class="btn btn-g">更新資料</a>
+            <a href="" class="btn btn-y">送出資料</a>
+            <a href="javascript:history.go(-1)" class="btn btn-gy">回上頁</a>
+        </div>
+    </div>
+</section>
+			
+			<footer>
+				<p>24HR維修中心專線：<a href="tel:06-5052772">06-5052772</a></p>
+			</footer>
+			
+		</div>
+		
+		<a href="#" class="btn-top" @click="toTop()"><img src="src/images/btn_top.svg" alt="回上方"></a>
+		
+		
+	</div>
+	<script src="js/es6-promise.auto.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-awesome-swiper.js"></script>
+	<script src="js/app.js"></script>
+
+	
+</body>
+</html>

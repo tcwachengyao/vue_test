@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta property="og:title" content="南部科學園區" />
+	<meta property="og:description" content="南部科學園區" />
+	<meta property="og:image" content="img/FB.jpg" />
+	<meta name="keywords" content="南部科學園區" />
+	<meta name="description" content="南部科學園區" />
+	<title>南部科學園區</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1 class="login-header">
+            <div class="logo pc-hide"><img src="src/images/login_logo.svg" alt="南部科學園區Logo"></div>
+            <div class="logo m-hide"><img src="src/images/logo.svg" alt="南部科學園區Logo"></div>
+        </h1>
+        <div class="container" id="login">
+			<div class="wrap">
+				<section v-if="isLoading == 0" class="section">
+    <form ref="loginForm">
+        <h2 class="text-center">LOGIN租戶登入</h2>
+        <div class="input-box"><div class="input-text"><input type="text" v-model="form.account" placeholder="帳號" required></div></div>
+        <div class="input-box"><div class="input-text"><input type="password" v-model="form.password" placeholder="密碼" required></div></div>
+        <div class="input-row">
+            <label for="code" class="input-name">
+                <img src="src/temp/code.png" alt="驗證碼">
+                <a><span class="icon"><img src="src/images/icon_change.svg"></span>更換圖片</a>
+            </label>
+            <div class="input-text"><input type="text" v-model="form.code" placeholder="驗證碼輸入請注意大小寫" required></div>
+        </div>
+        <div class="btn-block text-center">
+            <a @click="logoin()" class="btn-send"><img src="src/images/btn_logoin.svg" alt="登入"></a>
+        </div>
+        <p class="text-center">忘記密碼，請洽櫃台</p>
+    </form>
+</section>
+<section v-else class="text-center loading section" :class="isLoading == 1?'active': ''">
+    <div class="loading-icon"><img src="src/images/icon_loading.svg"></div>
+    <p>PLEASE WAIT...</p>
+</section>
+			</div>
+			<footer>
+				<p>24HR維修中心專線：<a href="tel:06-5052772">06-5052772</a></p>
+			</footer>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://cdn.staticfile.org/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
+	<script id="sns" type="text/javascript" src="http://www.zgxmall.com/html/js/browser.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/login.js"></script>
+
+	
+</body>
+</html>

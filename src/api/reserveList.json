@@ -1,0 +1,45 @@
+{
+	"totle":50,
+	"reserveList":[
+		{
+			"id":0,
+			"title":"會議室",
+			"isOpen":1,
+			"timePeriod":"2020-11-02 08:00 ~ 09:00",
+			"amount":1,
+			"exclusive":1,
+			"isReserve":1,
+			"url":"reservePage.html"
+		},
+		{
+			"id":2,
+			"title":"會客室",
+			"isOpen":0,
+			"timePeriod":"",
+			"amount":0,
+			"exclusive":0,
+			"isReserve":0,
+			"url":""
+		},
+		{
+			"id":3,
+			"title":"電影院",
+			"isOpen":1,
+			"timePeriod":"2020-11-02 08:00 ~ 09:00",
+			"amount":2,
+			"exclusive":0,
+			"isReserve":2,
+			"url":"reservePage.html"
+		},
+		{
+			"id":4,
+			"title":"會議室C",
+			"isOpen":0,
+			"timePeriod":"2020-11-02 08:00 ~ 09:00",
+			"amount":1,
+			"exclusive":0,
+			"isReserve":3,
+			"url":""
+		}
+	]
+}

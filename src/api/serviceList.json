@@ -1,0 +1,93 @@
+{
+	"totle":50,
+	"serviceList":[
+		{
+			"id":0,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":0
+		},
+		{
+			"id":1,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":1
+		},
+		{
+			"id":2,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":2
+		},
+		{
+			"id":3,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":3
+		},
+		{
+			"id":4,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":4
+		},
+		{
+			"id":5,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":5
+		},
+		{
+			"id":6,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":6
+		},
+		{
+			"id":7,
+			"building":"單身三期",
+			"room":"A1-101",
+			"problem":"客廳油漆牆面剝落/裂痕",
+			"date":"109/10/01 22:36",
+			"repairNumber":"10910-001",
+			"confirmDate":"2020-10-01 16:01:50",
+			"number":"TA-1091022-03",
+			"progress":7
+		}
+	]
+}
