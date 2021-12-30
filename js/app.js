@@ -4,8 +4,8 @@ var vue = new Vue({
   el: "#app",
   data: function () {
     return {
-      // domain: 'https://tcwachengyao.github.io/vue_test',
-      domain: '../',
+      domain: 'https://tcwachengyao.github.io/vue_test',
+      // domain: '../',
       isScroll: 0,
       isMenu: 0,
       screenWidth: 0,
